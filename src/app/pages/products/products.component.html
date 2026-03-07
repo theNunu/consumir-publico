@@ -1,0 +1,19 @@
+<p>products works!</p>
+<h2>componente de productos</h2>
+<h2>Productos</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>{{product.title}}</h3>
+
+  <img [src]="product.image" width="120">
+
+  <p>{{product.price}}</p>
+
+  <a [routerLink]="['/products', product.id]">
+    Ver producto
+  </a>
+
+  <hr>
+
+</div>
