@@ -7,7 +7,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent implements OnInit{
+export class ProductsComponent implements OnInit {
 
   products: any[] = [];
 
@@ -15,9 +15,47 @@ export class ProductsComponent implements OnInit{
 
   ngOnInit() {
 
+    // this.productService.getProducts().subscribe((data: any) => {
+    //   this.products = data;
+    // });
+
     this.productService.getProducts().subscribe((data: any) => {
       this.products = data;
+      this.updatePagination();
     });
+
+  }
+// LOGICA PARAM LA PAGNINACION HORIZONTAL
+  // //  products:any[] = [];
+  paginatedProducts: any[] = [];
+
+  currentPage = 1;
+  itemsPerPage = 4;
+
+  updatePagination() {
+
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+
+    this.paginatedProducts = this.products.slice(start, end);
+
+  }
+
+  nextPage() {
+
+    if (this.currentPage * this.itemsPerPage < this.products.length) {
+      this.currentPage++;
+      this.updatePagination();
+    }
+
+  }
+
+  prevPage() {
+
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePagination();
+    }
 
   }
 

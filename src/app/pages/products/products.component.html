@@ -1,19 +1,67 @@
 <p>products works!</p>
 <h2>componente de productos</h2>
 <h2>Productos</h2>
+<div class="bg-success p-4" style="display: flex;justify-content: space-between; gap: 15px;  ">
+    <div *ngFor="let product of products">
 
-<div *ngFor="let product of products">
+        <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
 
-  <h3>{{product.title}}</h3>
+            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
 
-  <img [src]="product.image" width="120">
+            <p>{{product.price}}</p>
 
-  <p>{{product.price}}</p>
+            <a [routerLink]="['/products', product.id]">
+                Ver producto
+            </a>
 
-  <a [routerLink]="['/products', product.id]">
-    Ver producto
-  </a>
 
-  <hr>
+        </div>
 
+
+        <!-- <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
+
+            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
+
+            <p>{{product.price}}</p>
+
+            <a [routerLink]="['/products', product.id]">
+                Ver producto
+            </a>
+
+
+        </div> -->
+
+        <br>
+
+
+    </div>
 </div>
+
+<h1>Carrusel</h1>
+<h2>Productowws</h2>
+<div style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
+    <div *ngFor="let product of paginatedProducts">
+        <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
+
+            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
+
+            <p>{{product.price}}</p>
+
+            <a [routerLink]="['/products', product.id]">
+                Ver producto
+            </a>
+
+
+        </div>
+
+
+    </div>
+</div>
+<button (click)="prevPage()">Anterior</button>
+
+<span>Página {{currentPage}}</span>
+
+<button (click)="nextPage()">Siguiente</button>
