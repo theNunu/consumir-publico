@@ -8,15 +8,13 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductsAdminComponent } from './pages/admin/products-admin/products-admin.component';
 import { MyNavbarComponent } from './pages/my-navbar/my-navbar.component';
-// import { MyNavbarComponent } from './pages/admin/my-navbar/my-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductDetailComponent,
-    ProductsAdminComponent,
+    // ProductsAdminComponent, // LO QUE QUITADO POR QUE AL SER TUN STADAOLE YA NO DEBE ESTAR AHQUI
     MyNavbarComponent
-    // MyNavbarComponent
   ],
   imports: [
     BrowserModule,
