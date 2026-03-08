@@ -2,7 +2,7 @@
 <h2>componente de productos</h2>
 <h2>Productos</h2>
 <div class="bg-success p-4" style="display: flex;justify-content: space-between; gap: 15px;  ">
-    <div *ngFor="let product of products">
+    <!-- <div *ngFor="let product of products">
 
         <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
             <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
@@ -18,25 +18,10 @@
 
         </div>
 
-
-        <!-- <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
-            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
-
-            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
-
-            <p>{{product.price}}</p>
-
-            <a [routerLink]="['/products', product.id]">
-                Ver producto
-            </a>
-
-
-        </div> -->
-
         <br>
 
 
-    </div>
+    </div> -->
 </div>
 
 <h1>Carrusel</h1>
@@ -69,11 +54,38 @@
 <!-- <i class="fa-solid fa-circle-arrow-left"></i>
 <i class="fa-solid fa-c"ircle-right"></i> -->
 <i (click)="prevPage()" class="fa-solid fa-circle-left fa-5x"></i>
-<i (click)="nextPage()"  class="fa-sharp fa-solid fa-circle-right fa-5x"></i>
+<i (click)="nextPage()" class="fa-sharp fa-solid fa-circle-right fa-5x"></i>
 
-<div class="padre">
-  <div class="hijo">Izquierda</div>
-  <div class="hijo hijo-central">Centro (más ancho)</div>
-  <div class="hijo">Derecha</div>
+<!-- <div class="padre">
+    <div class="hijo">Izquierda</div>
+    <div class="hijo hijo-central">Centro (más ancho)</div>
+    <div class="hijo">Derecha</div>
+</div> -->
+<hr>
+
+<div class="carrusel-main">
+    <div class="paginate-arrow">
+        <i (click)="prevPage()" class="fa-solid fa-circle-left fa-5x"></i>
+    </div>
+    <div class="rounded" style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
+        <div *ngFor="let product of paginatedProducts">
+            <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+                <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
+
+                <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
+
+                <p>{{product.price}}</p>
+
+                <a [routerLink]="['/products', product.id]">
+                    Ver producto
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="paginate-arrow">
+        <i (click)="nextPage()" class="fa-sharp fa-solid fa-circle-right fa-5x"></i>
+    </div>
 </div>
-

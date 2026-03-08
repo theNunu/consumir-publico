@@ -13,3 +13,17 @@
   flex: 2; /* El hijo central es el doble de ancho que los otros */
   background-color: skyblue;
 }
+
+.carrusel-main {
+     display: flex; /* Alinear horizontalmente */
+  width: 1600px; /* O el ancho deseado */
+
+}
+/* alinear las flechas  en el medio del contendor */
+.paginate-arrow{
+    /* background-color: blue; */
+    width: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
