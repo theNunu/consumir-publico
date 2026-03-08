@@ -1,0 +1,15 @@
+.padre {
+  display: flex; /* Alinear horizontalmente */
+  width: 100%; /* O el ancho deseado */
+}
+
+.hijo {
+  flex: 1; /* Los hijos laterales ocupan el mismo espacio */
+  background-color: lightgray;
+  border: 1px solid #ccc;
+}
+
+.hijo-central {
+  flex: 2; /* El hijo central es el doble de ancho que los otros */
+  background-color: skyblue;
+}

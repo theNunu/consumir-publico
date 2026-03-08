@@ -1,0 +1,11 @@
+CREACION DEL PROYECYO 
+ng new consumir-publico --standalone false --ssr false
+
+VERSION DE ANGULAR
+19.2.22
+
+pEGAR PARA USO DE FONT AWSOME  EN INDEX.HTMl:
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+

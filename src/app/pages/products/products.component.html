@@ -41,6 +41,7 @@
 
 <h1>Carrusel</h1>
 <h2>Productowws</h2>
+<div>ada</div>
 <div style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
     <div *ngFor="let product of paginatedProducts">
         <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
@@ -65,3 +66,14 @@
 <span>Página {{currentPage}}</span>
 
 <button (click)="nextPage()">Siguiente</button>
+<!-- <i class="fa-solid fa-circle-arrow-left"></i>
+<i class="fa-solid fa-c"ircle-right"></i> -->
+<i (click)="prevPage()" class="fa-solid fa-circle-left fa-5x"></i>
+<i (click)="nextPage()"  class="fa-sharp fa-solid fa-circle-right fa-5x"></i>
+
+<div class="padre">
+  <div class="hijo">Izquierda</div>
+  <div class="hijo hijo-central">Centro (más ancho)</div>
+  <div class="hijo">Derecha</div>
+</div>
+
