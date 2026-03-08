@@ -2,32 +2,13 @@
 <h2>componente de productos</h2>
 <h2>Productos</h2>
 <div class="bg-success p-4" style="display: flex;justify-content: space-between; gap: 15px;  ">
-    <!-- <div *ngFor="let product of products">
 
-        <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
-            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
-
-            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
-
-            <p>{{product.price}}</p>
-
-            <a [routerLink]="['/products', product.id]">
-                Ver producto
-            </a>
-
-
-        </div>
-
-        <br>
-
-
-    </div> -->
 </div>
 
 <h1>Carrusel</h1>
 <h2>Productowws</h2>
 <div>ada</div>
-<div style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
+<!-- <div style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
     <div *ngFor="let product of paginatedProducts">
         <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
             <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
@@ -45,7 +26,7 @@
 
 
     </div>
-</div>
+</div> -->
 <button (click)="prevPage()">Anterior</button>
 
 <span>Página {{currentPage}}</span>
@@ -67,9 +48,10 @@
     <div class="paginate-arrow">
         <i (click)="prevPage()" class="fa-solid fa-circle-left fa-5x"></i>
     </div>
-    <div class="rounded" style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
+    <div class="rounded shadow-lg"
+        style="display: flex; gap: 30px;  background-color: rgb(255, 255, 255); padding: 20px ;width: 1500px">
         <div *ngFor="let product of paginatedProducts">
-            <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+            <div class="bg-white border p-4 text-center rounded" style="width: 340px; height: 430px">
                 <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
 
                 <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
@@ -79,6 +61,11 @@
                 <a [routerLink]="['/products', product.id]">
                     Ver producto
                 </a>
+
+                <a [routerLink]="['/products', product.id]">
+                    <i class="fa-solid fa-eye fa-4x"></i>
+                </a>
+
             </div>
 
 
