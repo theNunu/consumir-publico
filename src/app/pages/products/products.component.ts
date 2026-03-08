@@ -25,7 +25,7 @@ export class ProductsComponent implements OnInit {
     });
 
   }
-// LOGICA PARAM LA PAGNINACION HORIZONTAL
+  // LOGICA PARAM LA PAGNINACION HORIZONTAL
   // //  products:any[] = [];
   paginatedProducts: any[] = [];
 
@@ -58,5 +58,23 @@ export class ProductsComponent implements OnInit {
     }
 
   }
+  // PARA EL MODAL
+  selectedProduct: any = null;
+  showModal = false;
+
+  openProduct(id: number) {
+
+    this.productService.getProductById(id).subscribe((data: any) => {
+      this.selectedProduct = data;
+      this.showModal = true;
+    });
+
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
 
 }
+
+
