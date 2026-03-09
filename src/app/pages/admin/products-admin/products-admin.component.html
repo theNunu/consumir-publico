@@ -8,41 +8,79 @@
 </div>
 
 <hr>
-<div class="bg-success"stylle ="
+<div class="bg-success" stylle="
     display: flex;
     justify-content: center;
     align-items: center; width: 100%">
 
     <div class="example-container mat-elevation-z8" style="max-height: 600px; overflow-y: auto;">
-        <mat-table #table [dataSource]="dataSource" matSort>
+        <div *ngFor="let product of products">
+            <mat-table #table [dataSource]="dataSource" matSort>
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-            </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> id. </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{product.id}} </mat-cell>
+                </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-            </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{product.title}} </mat-cell>
+                </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-            </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </mat-header-cell>
+                    <!-- <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell> -->
+                    <mat-cell *matCellDef="let element"> <img [src]="product.image" style="width: 100px; height: 100px"
+                            class="mt-4"> </mat-cell>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-            </ng-container>
+                </ng-container>
 
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{product.description}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Precio </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{product.price}} </mat-cell>
+                </ng-container>
+
+                   <ng-container matColumnDef="category">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{product.category}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+        </div>
+
     </div>
 
+</div>
+
+<hr>
+<div style="display: flex; gap: 30px;  background-color: aquamarine; padding: 20px ;width: 1500px">
+    <div *ngFor="let product of products">
+        <div class="bg-white shadow p-4 text-center rounded" style="width: 340px; height: 430px">
+            <div class="h4 text-primary font-weight-bold text-center">{{product.title}}</div>
+
+            <img [src]="product.image" style="width: 150px; height: 150px" class="mt-4">
+
+            <p>{{product.price}}</p>
+
+            <!-- <a [routerLink]="['/products', product.id]">
+                Ver producto
+            </a> -->
+
+
+        </div>
+
+
+    </div>
 </div>
